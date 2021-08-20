@@ -1,11 +1,11 @@
 function getValueZero(inputId){
-    const memoryCost=document.getElementById(inputId);
-     memoryCost.innerText=0;
+    const Cost=document.getElementById(inputId);
+     Cost.innerText=0;
 
 }
 function getValue180(inputId){
-    const memoryCost=document.getElementById(inputId);
-    memoryCost.innerText=180;
+    const Cost=document.getElementById(inputId);
+    Cost.innerText=180;
 
 }
 
@@ -34,15 +34,11 @@ document.getElementById('8GB').addEventListener('click',function(){
 document.getElementById('16GB').addEventListener('click',function(){
     getValue180('extra-memory-cost');
     getTotal();
-    // const memoryCost=document.getElementById('extra-memory-cost');
-    // memoryCost.innerText=180;
-    // const storageCost=document.getElementById('extra-storage-cost');
-    // storageCost.innerText=180;
+   
 });
 
 document.getElementById('256GB').addEventListener('click',function(){
-    // const memoryCost=document.getElementById();
-    // memoryCost.innerText=0;
+   
     getValueZero('extra-storage-cost');
     getTotal();
    
@@ -55,15 +51,13 @@ document.getElementById('512GB').addEventListener('click',function(){
   });
 
 document.getElementById('1TB').addEventListener('click',function(){
-    // const memoryCost=document.getElementById('extra-storage-cost');
-    // memoryCost.innerText=180;
+   
     getValue180('extra-storage-cost');
     getTotal();
    
   });
   document.getElementById('aug-25').addEventListener('click',function(){
-    //   const deliveryCost=document.getElementById('delivery-charge');
-    //   deliveryCost.innerText=0;
+    
     getValueZero('delivery-charge');
     getTotal();
   });
@@ -79,13 +73,18 @@ document.getElementById('1TB').addEventListener('click',function(){
       const input=document.getElementById('pomo-code-input').value;
       if(input=='stevekaku'){
           const discountPrice=getTotal()*(20/100);
-          console.log(discountPrice);
           const totalPrice=getTotal()-discountPrice;
-          console.log(totalPrice)
           const lastTotal= document.getElementById('total');
           lastTotal.innerText=totalPrice;
           input.value='';
+          
 
+      }
+
+      else{
+       const hidden=document.getElementById('hidden');
+       hidden.innerText='To get Dioscount ,Please add pomo code'
+       
       }
   })
 
