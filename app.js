@@ -1,15 +1,16 @@
+// function for return 0
 function getValueZero(inputId){
     const Cost=document.getElementById(inputId);
-     Cost.innerText=0;
-
+    Cost.innerText=0;
 }
+
+// function for return 180
 function getValue180(inputId){
     const Cost=document.getElementById(inputId);
     Cost.innerText=180;
-
 }
 
-
+// function for return Total
 function getTotal(){
     const bestPrice=parseFloat(document.getElementById('best-price').innerText);
     const memoryCost=parseFloat(document.getElementById('extra-memory-cost').innerText);
@@ -45,7 +46,7 @@ document.getElementById('256GB').addEventListener('click',function(){
   });
 document.getElementById('512GB').addEventListener('click',function(){
     const memoryCost=document.getElementById('extra-storage-cost');
-    memoryCost.innerText=120;
+    memoryCost.innerText=100;
     getTotal();
    
   });
@@ -69,22 +70,24 @@ document.getElementById('1TB').addEventListener('click',function(){
 
 
   document.getElementById('apply-button').addEventListener('click',function(){
-
-      const input=document.getElementById('pomo-code-input').value;
-      if(input=='stevekaku'){
+      const input=document.getElementById('pomo-code-input');
+      const inputvalue=input.value;
+      if(inputvalue=='stevekaku'){
           const discountPrice=getTotal()*(20/100);
           const totalPrice=getTotal()-discountPrice;
           const lastTotal= document.getElementById('total');
           lastTotal.innerText=totalPrice;
           input.value='';
-          
-
       }
 
       else{
        const hidden=document.getElementById('hidden');
        hidden.innerText='To get Dioscount ,Please add pomo code'
-       
+       input.value='';
+    //    if(input.focus){
+    //        document.getElementById('hidden').style.display='none'
+
+    //    }
       }
   })
 
