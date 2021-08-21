@@ -68,7 +68,7 @@ document.getElementById('1TB').addEventListener('click',function(){
       getTotal();
   });
 
-
+// Code for stevekaku
   document.getElementById('apply-button').addEventListener('click',function(){
       const input=document.getElementById('pomo-code-input');
       const inputvalue=input.value;
